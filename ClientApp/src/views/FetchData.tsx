@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { IForecast } from "@/services/interfaces"
+import { IForecast } from 'services/interfaces'
 
 const FetchData: React.FC = () => {
   const [forecasts, setForecasts] = useState<Array<IForecast>>([])
@@ -7,14 +7,14 @@ const FetchData: React.FC = () => {
 
   useEffect(() => {
     populateWeatherData().then(data => {
-      setForecasts(data);
+      setForecasts(data)
       setLoading(false)
     })
   }, [])
 
   async function populateWeatherData() {
-    const response = await fetch('WeatherForecast');
-    return await response.json();
+    const response = await fetch('WeatherForecast')
+    return await response.json()
   }
 
   return (
@@ -23,7 +23,7 @@ const FetchData: React.FC = () => {
       <p>This component demonstrates fetching data from the server.</p>
       { loading ? <p><em>Loading...</em></p> : renderForecastsTable(forecasts) }
     </div>
-  );
+  )
 
   function renderForecastsTable(forecasts: Array<IForecast>) {
     return (
@@ -47,7 +47,7 @@ const FetchData: React.FC = () => {
         ) }
         </tbody>
       </table>
-    );
+    )
   }
 }
 

@@ -1,4 +1,4 @@
-import { IToDo, IToDoDto } from "@/services/interfaces"
+import { IToDo, IToDoDto } from 'services/interfaces'
 
 export async function getAll(): Promise<Array<IToDo>> {
   const response = await fetch('ToDo')

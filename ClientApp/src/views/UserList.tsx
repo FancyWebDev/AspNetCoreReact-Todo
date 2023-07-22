@@ -1,5 +1,5 @@
-﻿import React, { Component } from "react"
-import { IUser } from "@/services/interfaces"
+﻿import React, { Component } from 'react'
+import { IUser } from 'services/interfaces'
 
 export class UserList extends Component<any, { users: Array<IUser>, loading: boolean }> {
   constructor(props: any) {

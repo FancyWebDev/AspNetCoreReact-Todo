@@ -1,9 +1,9 @@
 import React from 'react'
-import Counter from './components/Counter'
-import FetchData from './components/FetchData'
-import { Home } from './components/Home'
-import { UserList } from './components/UserList'
-import { ToDoList } from './components/ToDoList'
+import Counter from './views/Counter'
+import FetchData from './views/FetchData'
+import { Home } from './views/Home'
+import { UserList } from './views/UserList'
+import ToDo from './views/ToDo/Index'
 
 const AppRoutes = [
   {
@@ -24,7 +24,7 @@ const AppRoutes = [
   },
   {
     path: '/todo',
-    element: <ToDoList/>
+    element: <ToDo/>
   }
 ]
 

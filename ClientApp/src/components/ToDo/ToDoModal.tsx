@@ -1,11 +1,11 @@
 import React, { ChangeEvent, forwardRef, ReactElement, useEffect, useState, useImperativeHandle } from 'react'
-import { IToDoDto, Props, Ref } from '@/services/interfaces'
+import { IToDoDto, IProps, Ref } from 'services/interfaces'
 import { Button, Col, Form, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
-import { ToDoPriority, ToDoStatus } from '../../services/enums'
-import { create, update } from '../../services/todoRequestService'
-import { TodoPriorities, TodoStatuses } from '../../services/constants'
+import { ToDoPriority, ToDoStatus } from 'services/enums'
+import { create, update } from 'services/todoRequestService'
+import { TodoPriorities, TodoStatuses } from 'services/constants'
 
-const ToDoModal = forwardRef<Ref, Props>(({ _todo , onUpdate}, ref) => {
+const ToDoModal = forwardRef<Ref, IProps>(({ _todo, onUpdate}, ref) => {
   const [todo, changeToDo] = useState<IToDoDto>({
     title: '',
     description: '',
@@ -182,7 +182,7 @@ const ToDoModal = forwardRef<Ref, Props>(({ _todo , onUpdate}, ref) => {
             () => editTodo(todo) :
             () => createTodo(todo) }
         >
-          { todo.id === undefined ? 'Create' : 'Apply changes' }
+          { todo.id ? 'Apply changes' : 'Create' }
         </Button>{ ' ' }
         <Button color="secondary" onClick={ toggle }>
           Cancel

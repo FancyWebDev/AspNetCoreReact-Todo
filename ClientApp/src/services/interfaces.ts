@@ -31,7 +31,15 @@ export interface IForecast {
 
 export type Ref = {toggle: (todo?: IToDo) => void}
 
-export interface Props {
+export interface IProps {
   _todo?: IToDoDto,
   onUpdate?: () => void
+}
+
+export interface IToDoContextProps {
+  todoItems: Array<IToDo>,
+  setTodoItems: (todoItems: Array<IToDo>) => void,
+  setUpdate: (update: boolean) => void,
+  searchTerm: string
+  setSearchTerm: (term: string) => void
 }
